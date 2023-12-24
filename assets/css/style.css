@@ -1,0 +1,200 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 10vh calc(100vh - 30vh) 10vh;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "footer";
+}
+
+
+header {
+    display: flex;
+    background-color: white ;
+    grid-area: header;
+}
+
+header .logo img:hover {
+    transform: translateX(15px);
+    transition: all 2seg;
+}
+
+header .menu {
+    display: none;
+}
+
+header .mobile-menu{
+    position: absolute;
+    right: 5%;
+}
+
+nav {
+    background-color: #F05941;
+    text-align: center;
+    padding: 10px;
+    grid-area: nav;
+    color: #F3F3F3;
+}
+
+
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #B80000;
+    overflow-x: hidden;
+    grid-area: main;
+}
+main .galeria {
+    width: 100%;
+    max-width: 350px;
+    height: 2500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+main .galeria .card {
+    width: 250px;
+    height: 280px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 10px;
+    text-align: center;
+    transition: all 0.25s;
+    background-color: #FAF2D3;
+}
+
+main .galeria .card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    background-color: blueviolet;
+    color: white;
+}
+
+main .galeria .card img {
+    width: 250px;
+    height: 200px;
+}
+
+main .galeria .card h4 {
+    font-weight: 600;
+}
+
+main .galeria .card p {
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+    }
+
+    main .galeria .card a {
+
+        font-weight: 500;
+        text-decoration: none;
+        color: #3498db;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+        background-color: #F05941;
+        grid-area: footer;
+        color: #F3F3F3;
+    }
+
+    footer .redes-sociales {
+        position: absolute;
+        left: 10%;
+        text-align: left;
+    }
+
+    footer .formas-pago{
+
+        position: absolute;
+        right: 50%;
+        text-align: center;
+    }
+
+    footer .contactanos{
+
+        position: absolute;
+        right: 10%;
+        text-align: end;
+    }
+
+@media (min-width: 768px) {
+
+    body{
+
+        display: grid;
+        grid-template-columns: 200px auto;
+        grid-template-areas: 
+        "header nav"
+        "header main"
+        "header main"
+        "footer footer";
+    }
+
+    header{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    header .menu {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin-block-end: 200px;
+        gap: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Courier, monospace;
+        text-decoration: none;
+    }
+
+    header .menu a:hover {
+        transition: all linear 0,5s;
+        transform: rotate(20deg) scale(.60);
+        color: #333;
+        width: 250px;
+        gap:20px;
+    }
+
+    header .mobile-menu {
+        display: none;
+    }
+
+    main .galeria {
+        display: flex;
+    }
+
+    main .galeria .card {
+
+        width: 150px;
+        height: 200px;
+    }
+
+    main .galeria .card img {
+        width: 150px;
+        height: 120px;
+    }
+
+    main .galeria .card button:hover {
+        transition: all .5s;
+        transform: scale(1.25) ;
+    }
+    
+}
